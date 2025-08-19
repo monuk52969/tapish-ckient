@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+/* Theme Variables */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+/* ✅ Sharpie Variable (Local Font) */
+@font-face {
+  font-family: 'Sharpie';
+  src: url('/fonts/Sharpie-Variable.ttf') format('truetype');
+  font-weight: 100 900; /* Variable font ka range */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ✅ Panchang Variable (Local Font) */
+@font-face {
+  font-family: 'Panchang';
+  src: url('/fonts/Panchang-Variable.ttf') format('truetype');
+  font-weight: 100 900; /* Variable font ka range */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pencerio';
+  src: url('/Fonts/Pencerio-Hairline.otf') format('truetype');
+  font-weight: 100 900; /* Variable font ka range */
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ✅ Google Fonts */
+.bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sharpie {
+  font-family: 'Sharpie', sans-serif;
+}
+
+.panchang {
+  font-family: 'Panchang', sans-serif;
+}
+.Pencerio {
+  font-family: 'Pencerio', sans-serif;
+}
+/* Theme with Tailwind variables */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Default body font */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
