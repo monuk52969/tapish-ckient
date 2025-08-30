@@ -117,11 +117,11 @@ export default function Comparison() {
         </div>
 
         {/* After Image */}
-        <div className="comparisonImage afterImage absolute top-0 left-0 w-full h-full overflow-hidden translate-x-full">
+        <div className="comparisonImage afterImage absolute top-0 left-0 w-full h-full overflow-hidden">
           <img
             src="https://assets.codepen.io/16327/after.jpg"
             alt="after"
-            className="absolute top-0 left-0 w-full h-full object-cover -translate-x-full"
+            className="absolute top-0 left-0 w-full h-full object-cover"
           />
         </div>
       </section>

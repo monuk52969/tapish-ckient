@@ -34,7 +34,7 @@ export const SmoothScrollHero = () => {
 
 const Hero = () => {
   return (
-    <div style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }} className="relative w-full bg-[#000000]">
+    <div style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }} className="relative w-full bg-[#E3FF73]">
       <CenterImage />
       <ParallaxImages />
       <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-b from-zinc-950/0 to-zinc-950" />

@@ -16,6 +16,7 @@ export default function ImageTrailHero() {
   const bgRefs = [useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
+    // Animate background text
     bgRefs.forEach((ref, i) => {
       gsap.to(ref.current, {
         x: i % 2 === 0 ? "-50%" : "50%",
@@ -25,11 +26,16 @@ export default function ImageTrailHero() {
       });
     });
 
+    // Mouse move trail effect
     const imgs = containerRef.current.querySelectorAll(".trail-img");
-
     const moveHandler = (e) => {
       imgs.forEach((img, index) => {
-        gsap.to(img, { x: e.pageX, y: e.pageY, duration: 0.3, delay: index * 0.05 });
+        gsap.to(img, {
+          x: e.clientX - img.offsetWidth / 2,
+          y: e.clientY - img.offsetHeight / 2,
+          duration: 0.3,
+          delay: index * 0.05,
+        });
       });
     };
 
@@ -37,10 +43,33 @@ export default function ImageTrailHero() {
     return () => window.removeEventListener("mousemove", moveHandler);
   }, []);
 
+  const svgBackground = encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 436.3 436.3">
+  <radialGradient id="grad" cx="218.151" cy="218.151" r="218.151" gradientUnits="userSpaceOnUse">
+    <stop offset=".051" stop-color="#E3FF73" stop-opacity="0.5"/> {/* Start color with opacity */}
+    <stop offset=".912" stop-color="#E3FF73" stop-opacity="0"/> {/* Transparent end */}
+  </radialGradient>
+  <path
+    d="M436.3,218.15c0,120.48-97.67,218.15-218.15,218.15S0,338.63,0,218.15S97.67,0,218.15,0S436.3,97.67,436.3,218.15z"
+    fill="url(#grad)"
+    opacity="0.7"
+  />
+</svg>
+
+
+  `);
+
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-screen bg-black overflow-hidden"
+      className="relative w-full h-screen overflow-hidden bg-black"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,${svgBackground}")`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "40% 100%",
+        backgroundPosition: "left top-[10%]",
+        
+      }}
     >
       {/* Background moving text */}
       {[0, 1, 2].map((i) => (
@@ -50,10 +79,18 @@ export default function ImageTrailHero() {
         >
           <div ref={bgRefs[i]} className="flex">
             <span className="sharpie mr-10">
-              {i === 0 ? "Crafting Stories, Frame by Frame" : i === 1 ? "Cut Above The Rest" : "Editing Beyond Limits"}
+              {i === 0
+                ? "Crafting Stories, Frame by Frame"
+                : i === 1
+                ? "Cut Above The Rest"
+                : "Editing Beyond Limits"}
             </span>
             <span className="sharpie">
-              {i === 0 ? "Edit. Create. Inspire" : i === 1 ? "Turning Raw Clips into Magic" : "Your Story, My Cut"}
+              {i === 0
+                ? "Edit. Create. Inspire"
+                : i === 1
+                ? "Turning Raw Clips into Magic"
+                : "Your Story, My Cut"}
             </span>
           </div>
         </div>
@@ -65,7 +102,11 @@ export default function ImageTrailHero() {
           Tapish{" "}
           <span className="text-[#E3FF73] relative inline-block">
             Video
-            <svg viewBox="0 0 200 50" className="absolute -bottom-2 left-0 w-full h-6" fill="none">
+            <svg
+              viewBox="0 0 200 50"
+              className="absolute -bottom-2 left-0 w-full h-6"
+              fill="none"
+            >
               <motion.path
                 d="M0,25 Q100,0 200,25"
                 stroke="#FACC15"
@@ -80,7 +121,7 @@ export default function ImageTrailHero() {
         </h1>
 
         <p className="text-stone-400 mt-4 max-w-xl text-base md:text-lg">
-          Turning raw footage into cinematic magic! From YouTube reels to social media clips, 
+          Turning raw footage into cinematic magic! From YouTube reels to social media clips,
           I create videos that grab attention and leave a lasting impact.
         </p>
 
@@ -98,7 +139,7 @@ export default function ImageTrailHero() {
           className="trail-img absolute w-24 h-32 md:w-32 md:h-40 object-cover rounded-xl pointer-events-none"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
         />
       ))}
     </section>
