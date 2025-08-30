@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavDemo from "./components/ui/NavDemo";
+import Script from "next/script"; // <-- import Script
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,20 +22,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Model Viewer CDN */}
-        <script
+        {/* Model Viewer CDN using Next.js Script */}
+        <Script
           type="module"
           src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-        ></script>
+          strategy="beforeInteractive" // <-- ensures it loads before app runs
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavDemo />
-        <main>
-{children}
-        </main>
-        
+        <main>{children}</main>
       </body>
     </html>
   );
