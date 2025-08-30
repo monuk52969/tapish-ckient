@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image"; // added for optimized images
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,7 +82,7 @@ export default function Comparison() {
 
             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur border border-gray-700 hover:scale-105 hover:bg-white/20 transition duration-300">
               <h3 className="text-lg sm:text-xl font-bold mb-3 panchang text-[#E3FF73]">
-                How We're Different
+                How We&apos;re Different
               </h3>
               <p className="text-gray-300 text-sm sm:text-base panchang">
                 Har client ko personalized solution milta hai. Hum sirf visuals
@@ -109,19 +110,21 @@ export default function Comparison() {
       <section className="comparisonSection relative h-screen">
         {/* Before Image */}
         <div className="comparisonImage beforeImage w-full h-full">
-          <img
+          <Image
             src="https://assets.codepen.io/16327/before.jpg"
             alt="before"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
 
         {/* After Image */}
         <div className="comparisonImage afterImage absolute top-0 left-0 w-full h-full overflow-hidden">
-          <img
+          <Image
             src="https://assets.codepen.io/16327/after.jpg"
             alt="after"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
       </section>
