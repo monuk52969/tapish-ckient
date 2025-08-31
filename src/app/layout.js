@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavDemo from "./components/ui/NavDemo";
-import Script from "next/script"; // <-- import Script
+import Script from "next/script"; 
+import WhatsAppButton from "@/app/components/custombtns/WhatsAppButton ";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,18 +23,26 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Model Viewer CDN using Next.js Script */}
+        {/* Model Viewer CDN */}
         <Script
           type="module"
           src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-          strategy="beforeInteractive" // <-- ensures it loads before app runs
+          strategy="beforeInteractive"
         />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Navbar */}
         <NavDemo />
+
+        {/* Page Content */}
         <main>{children}</main>
+
+        {/* WhatsApp button fixed bottom-right */}
+        <div className="fixed bottom-6 right-6 z-50">
+          <WhatsAppButton />
+        </div>
       </body>
     </html>
   );

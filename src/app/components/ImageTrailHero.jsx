@@ -16,7 +16,6 @@ export default function ImageTrailHero() {
   const bgRefs = [useRef(null), useRef(null), useRef(null)];
 
   useEffect(() => {
-    // Animate background text
     bgRefs.forEach((ref, i) => {
       gsap.to(ref.current, {
         x: i % 2 === 0 ? "-50%" : "50%",
@@ -25,22 +24,6 @@ export default function ImageTrailHero() {
         repeat: -1,
       });
     });
-
-    // Mouse move trail effect
-    const imgs = containerRef.current.querySelectorAll(".trail-img");
-    const moveHandler = (e) => {
-      imgs.forEach((img, index) => {
-        gsap.to(img, {
-          x: e.clientX - img.offsetWidth / 2,
-          y: e.clientY - img.offsetHeight / 2,
-          duration: 0.3,
-          delay: index * 0.05,
-        });
-      });
-    };
-
-    window.addEventListener("mousemove", moveHandler);
-    return () => window.removeEventListener("mousemove", moveHandler);
   }, []);
 
   const svgBackground = encodeURIComponent(`
@@ -61,47 +44,66 @@ export default function ImageTrailHero() {
 
   return (
     <section
-      ref={containerRef}
-      className="relative w-full h-screen overflow-hidden bg-black"
-      style={{
-        backgroundImage: `url("data:image/svg+xml,${svgBackground}")`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "40% 100%",
-        backgroundPosition: "left top-[10%]",
-        
-      }}
-    >
+  ref={containerRef}
+  className="relative w-full h-screen overflow-hidden bg-[#000000]"
+  style={{
+    backgroundImage: `url("data:image/svg+xml,${svgBackground}")`,
+    backgroundRepeat: "no-repeat",
+    
+    backgroundPosition: "left top",
+  }}
+>
+  <style jsx>{`
+    section {
+      background-size: 100% 100%;
+    }
+    @media (min-width: 768px) {
+      section {
+        background-size: 40% 100%; 
+      }
+    }
+  `}
+  </style>
       {/* Background moving text */}
       {[0, 1, 2].map((i) => (
-        <div
-          key={i}
-          className={`absolute ${i === 0 ? "top-10" : i === 1 ? "top-1/2 -translate-y-1/2" : "bottom-10"} left-0 w-[200%] flex whitespace-nowrap overflow-hidden opacity-10 font-extrabold text-[12vw] md:text-[8vw] text-white uppercase tracking-widest`}
-        >
-          <div ref={bgRefs[i]} className="flex">
-            <span className="sharpie mr-10">
-              {i === 0
-                ? "Crafting Stories, Frame by Frame"
-                : i === 1
-                ? "Cut Above The Rest"
-                : "Editing Beyond Limits"}
-            </span>
-            <span className="sharpie">
-              {i === 0
-                ? "Edit. Create. Inspire"
-                : i === 1
-                ? "Turning Raw Clips into Magic"
-                : "Your Story, My Cut"}
-            </span>
-          </div>
-        </div>
-      ))}
+  <div
+    key={i}
+    className={`absolute 
+      ${i === 0 ? "top-10" : i === 1 ? "top-1/2 -translate-y-1/2" : "bottom-10"} 
+      left-0 
+      w-full sm:w-[150%] md:w-[200%] 
+      flex whitespace-nowrap overflow-hidden 
+      opacity-10 font-extrabold 
+      text-[10vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] 
+      text-white uppercase tracking-widest
+      ${i === 0 ? "rotate-[-4deg] md:rotate-0" : i === 1 ? "rotate-[6deg] md:rotate-0" : "rotate-[-6deg] md:rotate-0"}`}
+  >
+    <div ref={bgRefs[i]} className="flex">
+      <span className="sharpie text-[10vw] mr-4 sm:mr-6 md:mr-10">
+        {i === 0
+          ? "Crafting Stories, Frame by Frame"
+          : i === 1
+          ? "Cut Above The Rest"
+          : "Editing Beyond Limits"}
+      </span>
+      <span className="sharpie">
+        {i === 0
+          ? "Edit. Create. Inspire"
+          : i === 1
+          ? "Turning Raw Clips into Magic"
+          : "Your Story, My Cut"}
+      </span>
+    </div>
+  </div>
+))}
+
 
       {/* Foreground content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-        <h1 className="text-stone-300 text-5xl md:text-8xl panchang font-bold drop-shadow-lg relative inline-block">
-          Tapish{" "}
+        <h1 className="text-stone-300 text-[8.5vw] md:text-8xl panchang font-bold drop-shadow-lg relative inline-block">
+          Design.{" "}
           <span className="text-[#E3FF73] relative inline-block">
-            Video
+            Animate.
             <svg
               viewBox="0 0 200 50"
               className="absolute -bottom-2 left-0 w-full h-6"
@@ -117,7 +119,7 @@ export default function ImageTrailHero() {
               />
             </svg>
           </span>{" "}
-          <br /> Editor ✨
+          <br /> Captivate. ✨
         </h1>
 
         <p className="text-stone-400 mt-4 max-w-xl text-base md:text-lg">
@@ -125,13 +127,13 @@ export default function ImageTrailHero() {
           I create videos that grab attention and leave a lasting impact.
         </p>
 
-        <div className="mt-6">
+        <div className="mt-12 md:mt-6">
           <CustomButton />
         </div>
       </div>
 
       {/* Trail images */}
-      {images.map((src, i) => (
+      {/* {images.map((src, i) => (
         <motion.img
           key={i}
           src={src}
@@ -141,7 +143,7 @@ export default function ImageTrailHero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
         />
-      ))}
+      ))} */}
     </section>
   );
 }

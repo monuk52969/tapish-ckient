@@ -43,7 +43,7 @@ const MagneticButton = () => {
     <div className="flex justify-center items-center bg-transparent">
       <button
         ref={btnRef}
-        className="btn-5 relative px-10 py-4 rounded-full border-2 border-stone-300 text-stone-300 text-xl font-semibold overflow-hidden group transition-all duration-300 ease-in-out"
+        className="btn-5 relative px-6 py-4 md:px-10 md:py-4 rounded-full border-2 border-stone-300 text-stone-300 text-xl font-semibold overflow-hidden group transition-all duration-300 ease-in-out"
       >
         <span className="relative z-10 group-hover:text-black transition-colors duration-300">
           Let's Talk

@@ -150,7 +150,7 @@ const WorkHero = () => {
           <Smiley />
           <motion.h1
             variants={item}
-            className="leading-[0.95] font-extrabold panchang text-[56px] sm:text-[72px] md:text-[120px] tracking-tight text-stone-300"
+            className="leading-[0.95] font-extrabold panchang text-[44px] sm:text-[72px] md:text-[120px] tracking-tight text-stone-300"
           >
             DIGITAL
           </motion.h1>
@@ -160,7 +160,7 @@ const WorkHero = () => {
    // constant tilt
   transition={{ duration: 0.8, ease: "easeOut" }}
   className="leading-[0.95] sharpie font-extrabold 
-             text-[40px] sm:text-[72px] md:text-[120px] 
+             text-[32px] sm:text-[72px] md:text-[120px] 
              tracking-tight text-[#E3FF73] inline-block"
 >
   EXPERIENCES
@@ -172,7 +172,7 @@ const WorkHero = () => {
                        text-[32px] sm:text-[48px] md:text-[72px] lg:text-[96px] xl:text-[120px] 
                        tracking-tight text-stone-300"
           >
-            BUILT TO LAST
+            BUILT <span className="sharpie text-[20px] md:text-[72px]">TO</span>  LAST
           </motion.h2>
 
           <motion.p
@@ -335,19 +335,19 @@ export default function WorkPage() {
               From reels to long‑form edits, graphics, logos and cinematic VFX —
               I craft experiences that last.
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-6 flex md:flex-wrap items-center justify-center gap-3">
               <a
   href="https://wa.me/9557940863?text=Hi%20Monu,%20I%20want%20to%20start%20a%20project"
   target="_blank"
   rel="noopener noreferrer"
-  className="rounded-full bg-[#E3FF73] text-black font-semibold px-6 py-3"
+  className="rounded-full bg-[#E3FF73] text-black font-semibold md:px-6 md:py-3 px-4 py-2 text-[12px]"
 >
   Start a Project
 </a>
 
               <a
                 href="#"
-                className="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5"
+                className="rounded-full border border-white/15 md:px-6 md:py-3 px-4 py-2 text-[12px] hover:bg-white/5"
               >
                 See Rate Card
               </a>

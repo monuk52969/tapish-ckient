@@ -84,7 +84,7 @@ export default function ReelsPage() {
     <div className="min-h-screen px-6 py-12 bg-gray-50 dark:bg-[#0b0b0b] text-gray-900 dark:text-gray-100">
       <div className="max-w-6xl mx-auto">
         <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
-          <h1 className="text-4xl text-text-stone-300 sm:text-7xl panchang font-extrabold">Selected <sup className="text-[#E3FF73] sharpie text-7xl">Logo</sup> </h1>
+          <h1 className="text-4xl text-text-stone-300 sm:text-7xl panchang font-extrabold">Selected <sup className="text-[#E3FF73] sharpie text-5xl md:text-7xl">Logo</sup> </h1>
           <p className="text-xl text-gray-600 sharpie dark:text-stone-300">A collection of short reels & micro-case studies</p>
         </header>
 

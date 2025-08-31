@@ -28,7 +28,7 @@ const AboutHero = () => {
         >
           <motion.h1
             variants={item}
-            className="leading-[0.95] font-extrabold text-nowrap panchang text-[44px] sm:text-[68px] md:text-[94px] tracking-tight text-white"
+            className="leading-[0.95] font-extrabold text-nowrap panchang text-[40px] sm:text-[68px] md:text-[94px] tracking-tight text-white"
           >
             ABOUT ME
           </motion.h1>
@@ -130,11 +130,11 @@ const AboutCTA = () => {
             Whether it’s video editing, branding, or digital storytelling — I’m always excited 
             to collaborate and build something impactful.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <a href="#contact" className="rounded-full bg-[#E3FF73] text-black font-semibold px-6 py-3">
+          <div className="mt-6 flex md:flex-wrap items-center justify-center gap-3">
+            <a href="#contact" className="rounded-full bg-[#E3FF73] text-black font-semibold md:px-6 md:py-3 px-4 py-2 text-[14px]">
               Contact Me
             </a>
-            <a href="#work" className="rounded-full border border-white/15 px-6 py-3 hover:bg-white/5">
+            <a href="#work" className="rounded-full border border-white/15 md:px-6 md:py-3 px-4 py-2 text-[14px] hover:bg-white/5">
               View My Work
             </a>
           </div>

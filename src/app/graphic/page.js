@@ -1,20 +1,23 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 
 const GraphicDesign = () => {
   return (
-    <section className="relative min-h-screen  flex flex-col items-center justify-center px-6 py-12">
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-12">
       {/* Heading */}
       <div className="text-center space-y-4 mb-16">
         <h2
-  className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold panchang 
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold panchang 
              text-stone-300 drop-shadow-lg leading-tight sm:leading-snug md:leading-[1.1]"
->
-  Next-Level{" "}
-  <span className="text-[#E3FF73] sharpie">Graphic Design</span>
-</h2>
+        >
+          Next-Level{" "}
+          <span className="text-[#E3FF73] sharpie">Graphic Design</span>
+        </h2>
 
-        <p className="text-stone-400 panchang  text-lg md:text-xl max-w-2xl mb-8  mx-auto">
-          We break boundaries in creativity with stunning visuals, sleek UI/UX, and immersive 3D elements.
+        <p className="text-stone-400 panchang text-lg md:text-xl max-w-2xl mb-8 mx-auto">
+          We break boundaries in creativity with stunning visuals, sleek UI/UX,
+          and immersive digital experiences.
         </p>
       </div>
 
@@ -26,10 +29,12 @@ const GraphicDesign = () => {
             Why Choose Us?
           </h3>
           <ul className="space-y-4 panchang text-lg">
-            <li className="text-nowrap">🚀 Unique and Modern UI/UX that breaks the mold</li>
+            <li className="text-nowrap">
+              🚀 Unique and Modern UI/UX that breaks the mold
+            </li>
             <li>🎨 High-end Visual Design & Branding</li>
             <li>🖼️ VFX & Motion Graphics integration</li>
-            <li>🪄 Immersive 3D elements for a futuristic feel</li>
+            <li>🪄 Eye-catching Posters & Illustrations</li>
             <li>📱 Fully responsive and optimized designs</li>
           </ul>
           <a
@@ -40,15 +45,35 @@ const GraphicDesign = () => {
           </a>
         </div>
 
-        {/* 3D Model Showcase */}
-        <div className="flex justify-center items-center">
-          <model-viewer
-            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-            alt="3D Design Model"
-            auto-rotate
-            camera-controls
-            className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]"
-          ></model-viewer>
+        {/* Showcase Cards Instead of 3D */}
+        <div className="grid grid-cols-2 gap-6">
+          <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/graph1.png"
+              alt="Creative Poster"
+              width={400}
+              height={400}
+              className="object-cover w-full h-full transform group-hover:scale-110 transition duration-500"
+            />
+          </div>
+          <div className="relative group overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src="/images/graph2.png"
+              alt="UI/UX Mockup"
+              width={400}
+              height={400}
+              className="object-cover w-full h-full transform group-hover:scale-110 transition duration-500"
+            />
+          </div>
+          <div className="relative group overflow-hidden rounded-2xl shadow-lg col-span-2">
+            <Image
+              src="/images/graph3.png"
+              alt="Branding Showcase"
+              width={800}
+              height={400}
+              className="object-cover w-full h-[250px] md:h-[300px] transform group-hover:scale-110 transition duration-500"
+            />
+          </div>
         </div>
       </div>
     </section>

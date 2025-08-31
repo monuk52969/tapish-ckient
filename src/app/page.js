@@ -1,17 +1,16 @@
 "use client";
-import Video from "@/app/video/page";
+
 import Work from "@/app/work/page";
 import About from "@/app/about/page";
 import Vfx from "@/app/vfx/page";
 import Graphic from "@/app/graphic/page";
 import Lenis from "@studio-freight/lenis";
-import ImageTrailHero from "./components/ImageTrailHero";
+import Contact from "@/app/contact/page"
 import { useEffect, useRef } from "react";
-import Intro from "./components/custombtns/footer/Intro";
-import Footer from "./components/custombtns/footer/Footer1";
+
 import Section1 from "@/app/components/sections/Section1";
 import Section2 from "@/app/components/sections/Section2";
-import PhoneVideoMock from "./reels/page";
+
 
 import { useScroll } from "framer-motion";
 import Reels from "./work/reels/page";
@@ -46,8 +45,9 @@ const Page = () => {
 
   return (
     <div>
+     
       {/* Hero Section */}
-      <section id="home" className="relative h-screen w-full overflow-hidden">
+      <section id="home" className="relative h-screen w-full bg-white overflow-hidden">
         <main ref={container} className="relative h-[200vh]">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
@@ -55,9 +55,7 @@ const Page = () => {
       </section>
 
       {/* Other Sections */}
-      <section id="Video">
-        <Video />
-      </section>
+     
 
       <section id="about">
         <About />
@@ -83,11 +81,10 @@ const Page = () => {
       <section id="graphic">
         <Graphic />
       </section>
-
-      <section id="footer">
-        <Intro />
-        <Footer />
+        <section id="work">
+        <Contact />
       </section>
+      
     </div>
   );
 };

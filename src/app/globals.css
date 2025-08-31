@@ -8,6 +8,10 @@
   --foreground: #171717;
 }
 
+body, html{
+  overflow-x: hidden;
+}
+
 /* ✅ Sharpie Variable (Local Font) */
 @font-face {
   font-family: 'Sharpie';
@@ -75,3 +79,14 @@ body {
   color: var(--foreground);
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
+
+/* globals.css */
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px #34d399; }
+  50% { transform: scale(1.2); box-shadow: 0 0 20px #34d399; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1.5s infinite;
+}
+

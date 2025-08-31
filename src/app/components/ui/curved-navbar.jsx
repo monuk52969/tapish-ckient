@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { IoClose } from "react-icons/io5";
 import Link from 'next/link';
+import { FaYoutube, FaInstagram, FaBehance, FaPhone } from "react-icons/fa";
 
 const navItems = [
     {
@@ -74,12 +75,38 @@ function Curve() {
   }
   function Footer() {
     return (
-      <div className={`flex w-full text-sm justify-between`}>
-          <a>Link 1</a>
-          <a>Link 2</a>
-          <a>Link 3</a>
-          <a>Link 4</a>
-      </div>
+      <div className="flex w-full justify-between items-center text-sm   px-4 py-4 mt-auto">
+      <a
+        href="https://youtube.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:text-red-600 transition-all text-2xl sm:text-4xl"
+      >
+        <FaYoutube />
+      </a>
+      <a
+        href="https://instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:text-pink-500 transition-all text-2xl sm:text-4xl"
+      >
+        <FaInstagram />
+      </a>
+      <a
+        href="https://behance.net/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:text-blue-500 transition-all text-2xl sm:text-4xl"
+      >
+        <FaBehance />
+      </a>
+      <a
+        href="tel:+919876543210"
+        className="text-black hover:text-green-500 transition-all text-2xl sm:text-4xl"
+      >
+        <FaPhone />
+      </a>
+    </div>
     )
   }
   function NavLink({data, isActive, setSelectedIndicator}) {
@@ -101,8 +128,8 @@ export default function CurvedNavbar({isActive, setIsActive}) {
       <motion.div variants={menuSlide} initial="initial" animate="enter" exit="exit" className={`h-screen w-screen max-w-screen-sm fixed right-0 top-0 text-black bg-[#e3ff73] z-10`}>
         <div className='w-full flex justify-end text-3xl p-4' onClick={()=>setIsActive(false)}><IoClose className='text-3xl'/></div>
          <div className={`styles.body h-full p-24 flex flex-col justify-between`}>
-              <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={`flex flex-col text-4xl gap-3 mt-5`}>
-                      <div className={`text-gray-900 border-b border-gray-800 uppercase text-sm mb-20`}>
+              <div onMouseLeave={() => {setSelectedIndicator(pathname)}} className={`flex flex-col text-4xl gap-3`}>
+                      <div className={`text-gray-900 border-b border-gray-800 uppercase text-sm mb-8 md:mb-20`}>
                           <p>Brand Logo</p>
                       </div>
                       {

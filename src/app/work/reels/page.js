@@ -13,7 +13,7 @@ const PremiumUGC = () => {
   return (
     <div>
       {/* Section-1 */}
-      <section className="relative w-full min-h-screen bg-black text-white px-4 sm:px-6 md:px-6 py-16 mt-20 flex flex-col">
+      <section className="relative w-full min-h-screen bg-black text-white px-4 sm:px-6 md:px-6 py-16  flex flex-col">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-radial from-green-700/50 via-transparent to-transparent" />
 
@@ -21,8 +21,8 @@ const PremiumUGC = () => {
         <div className="relative z-10 mb-24 w-full text-left">
           <div className="flex items-start gap-2">
             {/* Big OUR text */}
-            <div className="absolute left-20 sm:left-40 md:left-80 -top-12 flex items-start gap-2">
-              <div className="bg-[#E4F075] px-8 sm:px-12 md:px-16 py-3 sm:py-4 rounded-full">
+            <div className="absolute left-36 sm:left-40 md:left-80 -top-8 flex items-start gap-2">
+              <div className="bg-[#E4F075] px-8 sm:px-12 md:px-16 py-2 sm:py-4 rounded-full">
                 <span className="text-2xl sm:text-3xl md:text-3xl font-extrabold uppercase text-[#000000] sharpie">
                   OUR
                 </span>
@@ -42,8 +42,8 @@ const PremiumUGC = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-8xl font-extrabold mt-4 panchang text-stone-300 ml-4 sm:ml-8 md:ml-12">
-            PREMIUM{" "}
+          <h1 className="text-[36px] sm:text-5xl md:text-8xl font-extrabold mt-4 panchang text-stone-300 ml-4 sm:ml-8 md:ml-12">
+            SELECTED{" "}
             <sup className="text-[#E3FF73] text-[10vw] sm:rotate-12 sm:text-[8vw] md:text-[7vw] sharpie">
               Reels
             </sup>
@@ -95,7 +95,7 @@ const PremiumUGC = () => {
         </div>
       </section>
       {/* Section-2 */}
-      <section className="relative w-full min-h-screen bg-black text-white px-4 sm:px-6 md:px-6 py-16 mt-20 flex flex-col">
+      <section className="relative w-full min-h-screen bg-black text-white px-4 sm:px-6 md:px-6 py-16  flex flex-col">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-radial from-green-700/50 via-transparent to-transparent" />
 
